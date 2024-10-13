@@ -1,0 +1,107 @@
+body{
+    background-color: #52107a;
+    display: grid;
+    place-items: center;
+}
+.head{
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.image{
+    width: 50%;
+    height:max-content;
+    margin-top: 30px;
+    margin-bottom: 40px;
+}
+.body{
+    background-color: white;
+    padding: 20px;
+    width: 80%;
+}
+.content{
+    display: grid;
+    place-items: center; 
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    color: #52107a;
+    font-size: 20px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: bolder;
+}
+.label{
+    color: #52107a;
+    font-size: 15px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: bolder;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+.name{
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    font-size: 15px;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+input[type="text"] {
+    padding-left: 15px; 
+    text-align: left;
+}
+input[type="number"] {
+    padding-left: 15px; 
+    text-align: left; 
+}
+input[type="email"] {
+    padding-left: 15px; 
+    text-align: left;
+}
+input[type="tel"] {
+    padding-left: 15px; 
+    text-align: left; 
+}
+input[type="date"] {
+    padding-left: 15px; 
+    text-align: left;
+}
+
+.input{
+    border-radius: 100px;  
+    border: 1px solid #333;
+    width: 90%;              
+    border-bottom: 2px solid #757882; 
+    outline: none;             
+    padding: 5px 0;
+    margin-bottom: 10px;
+    margin-top: 5px;  
+}
+hr{
+    background-color:#271c60;
+    height: 2px; 
+}
+
+button{
+    display: grid;
+    place-items: center; 
+    background-color: #52107a;
+    color: white;
+    padding: 10px 20px;         
+    border-radius: 50px;
+    border-color: #52107a;
+    width: 180px;
+    height: 50px; 
+    box-shadow: none; 
+    margin: auto;
+    font-size: 25px; 
+}
+#fullName{
+    border: none; 
+    border-bottom: 2px solid #000; 
+    padding: 5px 0; 
+    outline: none; 
+    width: 70%; 
+}
+#nationalId{
+    border: none; 
+    border-bottom: 2px solid #000; 
+    padding: 5px 0; 
+    outline: none; 
+    width: 70%; 
+}

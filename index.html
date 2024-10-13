@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Application Form</title>
+    <link rel="icon" href="images/logo1.jpg">
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    <div class="body">
+        <div class="head">
+            <img src="images/logo2.jpg" class="image" width="200" height="150">
+        </div>
+        <pre class="content">APPLICATION FOR EMPLOYMENT</pre>
+        <form action="submit.php" method="post">
+            <label for="firstName" class="name"> First Name :</label><br>
+            <input type="text" id="firstName" name="firstName" class="input" placeholder="Enter your first name" required><br><br>
+
+            <label for="lastName" class="name">Last Name :</label><br>
+            <input type="text" id="lastName" name="lastName" class="input" placeholder="Enter your last name" required><br><br>
+
+            <label for="address" class="name">Address :</label><br>
+            <input type="text" id="address" name="address" class="input" placeholder="Enter your address" required><br><br>
+
+            <label for="email" class="name"> Email :</label><br>
+            <input type="email" id="email" name="email" class="input" required placeholder="Enter your email"><br><br>
+
+            <label for="phone" class="name"> Phone:</label><br>
+            <input type="tel" id="phone" name="phone" class="input" placeholder="Enter your phone number" required><br><br>
+
+            <hr>
+            <label for="position" class="name"> Position:</label><br>
+            <input type="text" id="position" name="position" class="input" placeholder="Enter your position" required><br><br>
+
+            <label for="date" class="name"> Available Start Date :</label><br>
+            <input type="date" id="date" name="date" class="input" required ><br><br>
+
+            <label for="salary" class="name">Desired Pay Range :</label><br>
+            <input type="number" id="salary" name="salary" class="input" required placeholder="Enter your expected salary"><br><br>
+
+            <label for="employmentStatus" class="name">Are you currently employed?</label>
+            <input type="checkbox" id="yes" class="input1" name="employmentStatus" value="Yes">
+            <label class="name" for="yes">Yes</label>
+            <input type="checkbox" id="no" class="input1" name="employmentStatus" value="No">
+            <label class="name" for="no">No</label>
+
+            <hr>
+            <label for="highschool" class="name">High School</label><br>
+            <input type="text" class="input" id="highschool" name="highschool" placeholder="Enter your high school"><br><br>
+
+            <label for="college" class="name">College</label><br>
+            <input type="text" id="college" class="input" name="college" required placeholder="Enter your college name">
+            <input type="text" id="grade" class="input" name="grade" required placeholder="Enter your grade">
+            <input type="text" id="major" class="input" name="major" required placeholder="Enter your Major, subjects of study "><br><br>
+
+            <label for="training" class="name">Specialized Training :</label><br>
+            <input type="text" id="training" class="input" name="training" required placeholder="Enter your training"><br><br>
+
+            <label for="training2" class="name">Other Education :</label><br>
+            <input type="text" id="training2" class="input" name="training2" placeholder="Enter any education you have"><br><br>
+
+            <hr>
+            <pre class="content">PREVIOUS EXPERIENCE</pre>
+            <pre class="label">4-Please list beginning from most recent.</pre>
+            <label for="employed1" class="name">Dates Employed:</label><br>
+            <input type="date" id="employed1" name="employed1" class="input" placeholder="Enter date of employment"><br><br>
+
+            <label for="companyname1" class="name">Company Name:</label><br>
+            <input type="text" id="companyname1" name="companyname1" class="input" placeholder="Enter your last company name"><br><br>
+
+            <label for="location1" class="name">Location:</label><br>
+            <input type="text" id="location1" name="location1" class="input" placeholder="Enter its location"><br><br>
+
+            <label for="role1" class="name">Role/Title:</label><br>
+            <input type="text" id="role1" class="input" name="role1"><br><br>
+
+            <label for="message1" class="name">Job, tasks performed and reason for leaving:</label><br>
+            <textarea id="message1" name="message1" rows="4" cols="30"></textarea><br><br>
+
+            <hr>
+            <label for="nationalId" class="name">National Id :</label><br>
+            <input type="text" id="nationalId" name="nationalId" required><br><br>
+
+            <label for="fullName" class="name">Full Name :</label><br>
+            <input type="text" id="fullName" name="fullName" required><br><br>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script>
+        function sendEmail() {
+    // تأكد من أن جميع الحقول تم ملؤها بشكل صحيح
+    let highschoolValue = document.getElementById("highschool").value;
+
+    Email.send({
+        SecureToken: "287114da-df17-4e9d-8feb-7b04480a349f",
+        To: 'Hr@uramit.eg.com',
+        From: 'Hr@uramit.eg.com',
+        Subject: "Application Form",
+        Body: "First Name: " + document.getElementById("firstName").value +
+            "<br> Last Name: " + document.getElementById("lastName").value +
+            "<br> Address: " + document.getElementById("address").value +
+            "<br> Phone: " + document.getElementById("phone").value +
+            "<br> Email: " + document.getElementById("email").value +
+            "<br> Position: " + document.getElementById("position").value +
+            "<br> Start Date: " + document.getElementById("date").value +
+            "<br> Expected Salary: " + document.getElementById("salary").value +
+            "<br> High School: " + highschoolValue + // تعديل هنا
+            "<br> College Name: " + document.getElementById("college").value +
+            "<br> Grade: " + document.getElementById("grade").value +
+            "<br> Major: " + document.getElementById("major").value +
+            "<br> Specialized Training: " + document.getElementById("training").value +
+            "<br> Other Training: " + document.getElementById("training2").value +
+            "<br> Employed Date: " + document.getElementById("employed1").value +
+            "<br> Company Name: " + document.getElementById("companyname1").value +
+            "<br> Location: " + document.getElementById("location1").value +
+            "<br> Role: " + document.getElementById("role1").value +
+            "<br> Comments: " + document.getElementById("message1").value +
+            "<br> National Id: " + document.getElementById("nationalId").value +
+            "<br> Full Name: " + document.getElementById("fullName").value
+    }).then(
+        message => {
+            alert("Message sent successfully!");
+        }
+    ).catch(
+        error => {
+            console.error("Error sending message: ", error); // طباعة الأخطاء في وحدة التحكم
+            alert("Error sending message: " + error);
+        }
+    );
+
+    return false; // Prevent default form submission
+}
+     
+    </script>
+</body>
+</html>
